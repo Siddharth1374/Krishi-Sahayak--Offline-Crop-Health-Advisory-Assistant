@@ -1,0 +1,26 @@
+# --- Core ---
+numpy
+opencv-python
+pillow
+
+# --- On-device inference (Qualcomm AI Hub / QNN) ---
+onnxruntime-qnn        # Qualcomm's ONNX Runtime build with QNN Execution Provider (NPU)
+qai-hub                # Qualcomm AI Hub CLI/SDK
+qai-hub-models          # Pre-optimized model zoo (MobileNet, YOLO, Whisper, etc.)
+
+# --- LLM (local, quantized) ---
+llama-cpp-python         # Runs GGUF-quantized Llama/Phi models locally (CPU/NPU-assisted)
+# Alternative for pure ONNX Runtime GenAI + QNN NPU path:
+# onnxruntime-genai
+
+# --- RAG / knowledge base ---
+scikit-learn             # lightweight TF-IDF retriever (no heavy embedding model needed offline)
+pypdf                    # parse local agri-guide PDFs into the knowledge base
+
+# --- Speech ---
+faster-whisper           # ASR (CPU/NPU); or swap for AI Hub-optimized Whisper ONNX build
+pyttsx3                  # offline TTS fallback (swap for MMS-TTS for local languages)
+sounddevice               # mic capture
+
+# --- UI ---
+gradio                   # simple local web UI (runs fully offline on localhost)
